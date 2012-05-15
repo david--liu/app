@@ -1,7 +1,7 @@
 configs ={
   :git => {
     :user => '20120514austin',
-    :remotes => potentially_change("remotes",__FILE__),
+    :remotes => %w[skiplee heffay adriangonzalez travismartinjones masudio levesque david--liu],
     :repo => 'app' 
   }
 }
