@@ -79,6 +79,9 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="web\core\aspnet\ASPNetHandler.cs" />
+    <Compile Include="web\core\ICreateControllerRequests.cs" />
+    <Compile Include="web\core\IProcessWebRequests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
