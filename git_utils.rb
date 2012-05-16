@@ -27,6 +27,6 @@ def exit_if_not_on_the_branch(branch)
 
 end
 
-def exit_if_on_the_master_branch
+def exit_if_not_on_the_master_branch
   exit_if_not_on_the_branch 'master'
 end
