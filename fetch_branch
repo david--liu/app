@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative 'git_utils.rb'
+
 def run_git_command(command,capture_ouptut = false)
     full_command = "git #{command}"
     if (capture_ouptut)
@@ -37,7 +39,7 @@ end
 def update_to_specific_branch_on(remote_name)
   run_git_command("add -A")
   run_git_command('commit -m "Updated"')
-  run_git_command("checkout master")
+  run_git_command("checkout clean")
   specific_branch = get_specific_remote_branch_name_from(remote_name)
 
   new_branch = "pull_#{remote_name}_#{specific_branch}"
@@ -45,6 +47,8 @@ def update_to_specific_branch_on(remote_name)
   run_git_command("checkout #{new_branch}")
   run_git_command("pull #{remote_name} #{specific_branch}")
 end
+
+%w[master clean].each{|branch| exit_if_on_branch branch}
 
 remote_name = ARGV.shift
 remote_name = choose_remote(get_all_available_non_origin_remotes) if remote_name == nil
