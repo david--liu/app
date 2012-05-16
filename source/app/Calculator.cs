@@ -1,6 +1,8 @@
 using System;
 using System.Data;
 using System.Linq;
+using System.Security;
+using System.Threading;
 
 namespace app
 {
@@ -34,7 +36,10 @@ namespace app
 
         public void turn_off()
         {
-            throw new NotImplementedException();
+            if (Thread.CurrentContext != Thread.CurrentPrincipal)
+            {
+                throw new SecurityException();
+            }
         }
     }
 }
