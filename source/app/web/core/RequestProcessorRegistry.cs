@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace app.web.core
 {
@@ -14,13 +15,10 @@ namespace app.web.core
 
         public IProcessOneRequest get_the_command_that_can_handle(IContainRequestDetails the_request)
         {
-            foreach (var processor in all_the_possible_processors)
-            {
-                if (processor.can_process(the_request))
-                    return processor;
-            }
+            
+            return all_the_possible_processors.FirstOrDefault(processor => processor.can_process(the_request));
 
-            return null;
+            
         }
     }
 }
