@@ -15,10 +15,7 @@ namespace app.web.core
 
         public IProcessOneRequest get_the_command_that_can_handle(IContainRequestDetails the_request)
         {
-            
-            return all_the_possible_processors.FirstOrDefault(processor => processor.can_process(the_request));
-
-            
+            return all_the_possible_processors.First(processor => processor.can_process(the_request));
         }
     }
 }

@@ -46,6 +46,7 @@ namespace app.specs
                 static IContainRequestDetails request;
                 static IList<IProcessOneRequest> all_the_possible_processors;
             }
+
             public class and_it_does_not_have_the_processor
             {
                 Establish c = () =>
