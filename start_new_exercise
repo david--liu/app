@@ -2,7 +2,7 @@
 
 require_relative 'git_utils.rb'
 
-%w[master clean].each{|branch| exit_if_on_the_branch branch}
+%w[master clean].each{|branch| exit_if_on_branch branch}
 
 current_time = Time.now
 new_branch_name = current_time.strftime("%Y%m%d%H%M%S%3N")
