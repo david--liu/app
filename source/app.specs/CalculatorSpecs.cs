@@ -12,7 +12,7 @@ namespace app.specs
 {
     public class CalculatorSpecs
     {
-        public abstract class concern : Observes<Calculator>
+        public abstract class concern : Observes<ICalculator, Calculator>
         {
         }
 
@@ -24,7 +24,6 @@ namespace app.specs
                 {
                     principal = fake.an<IPrincipal>();
                     principal.setup(x => x.IsInRole(Arg<string>.Is.Anything)).Return(false);
-
                     spec.change(() => Thread.CurrentPrincipal).to(principal);
                 };
 

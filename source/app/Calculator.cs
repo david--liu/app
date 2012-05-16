@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace app
 {
-    public class Calculator
+    public class Calculator : ICalculator
     {
         IDbConnection connection;
 
@@ -42,7 +42,7 @@ namespace app
         static void ensure_has_role(string role)
         {
             if (!Thread.CurrentPrincipal.IsInRole(role))
-                throw new SecurityException(string.Format("but you dont have the role - {0}"));
+                throw new SecurityException(string.Format("but you dont have the role - {0}", role));
         }
     }
 }
