@@ -1,6 +1,8 @@
 using System;
 using System.Data;
 using System.Linq;
+using System.Security;
+using System.Threading;
 
 namespace app
 {
@@ -34,7 +36,13 @@ namespace app
 
         public void turn_off()
         {
-            throw new NotImplementedException();
+            ensure_has_role("anything");
+        }
+
+        static void ensure_has_role(string role)
+        {
+            if (!Thread.CurrentPrincipal.IsInRole(role))
+                throw new SecurityException();
         }
     }
 }
