@@ -15,9 +15,12 @@ namespace app
 
         public int add(int first, int second)
         {
+            ensure_all_are_positive(first, second);
+            
             connection.Open();
+            var cmd = connection.CreateCommand();
+            cmd.ExecuteNonQuery();
 
-            ensure_all_are_positive(first,second);
             return first + second;
         }
 
