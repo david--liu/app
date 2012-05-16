@@ -16,17 +16,25 @@ namespace app
         public int add(int first, int second)
         {
             ensure_all_are_positive(first, second);
-            
-            connection.Open();
-            var cmd = connection.CreateCommand();
-            cmd.ExecuteNonQuery();
 
+            using(connection)
+            using (var command = connection.CreateCommand())
+            {
+                
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
             return first + second;
         }
 
         static void ensure_all_are_positive(params int[] numbers)
         {
             if (numbers.Any(x => x < 0)) throw new ArgumentException("we cant handle negatives");
+        }
+
+        public void turn_off()
+        {
+            throw new NotImplementedException();
         }
     }
 }
