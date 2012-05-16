@@ -16,7 +16,7 @@ if (branch_name != "")
   checkout(branch_name)
 end
 
-checkout(master)
+checkout('master')
 
 exit_if_not_on_the_master_branch
 
