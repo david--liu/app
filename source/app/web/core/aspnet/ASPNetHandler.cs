@@ -1,28 +1,27 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 
 namespace app.web.core.aspnet
 {
     public class ASPNetHandler : IHttpHandler
     {
         IProcessWebRequests front_controller;
-        ICreateControllerRequests controller_factory;
+        ICreateRequests request_factory;
 
-        public ASPNetHandler(IProcessWebRequests front_controller, ICreateControllerRequests controller_factory)
+        public ASPNetHandler(IProcessWebRequests front_controller, ICreateRequests request_factory)
         {
             this.front_controller = front_controller;
-            this.controller_factory = controller_factory;
+            this.request_factory = request_factory;
         }
 
         public void ProcessRequest(HttpContext context)
         {
-            var response = controller_factory.create_from(context);
-            front_controller.process(response);
+            var request = request_factory.create_request_from(context);
+            front_controller.process(request);
         }
 
         public bool IsReusable
         {
-            get { throw new System.NotImplementedException(); }
+            get { return true; }
         }
     }
 }

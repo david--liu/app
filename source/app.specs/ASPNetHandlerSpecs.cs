@@ -23,11 +23,12 @@ namespace app.specs
             Establish c = () =>
             {
                 front_controller = depends.on<IProcessWebRequests>();
-                request_factory = depends.on<ICreateControllerRequests>();
-                a_new_request = new object();
+                request_factory = depends.on<ICreateRequests>();
+
+                a_new_request = fake.an<IContainRequestDetails>();
                 new_http_context = ObjectFactory.web.create_http_context();
 
-                request_factory.setup(x => x.create_from(new_http_context)).Return(a_new_request);
+                request_factory.setup(x => x.create_request_from(new_http_context)).Return(a_new_request);
             };
             Because b = () =>
                 sut.ProcessRequest(new_http_context);
@@ -37,9 +38,9 @@ namespace app.specs
                 front_controller.received(x => x.process(a_new_request));
 
             static IProcessWebRequests front_controller;
-            static object a_new_request;
+            static IContainRequestDetails a_new_request;
             static HttpContext new_http_context;
-            static ICreateControllerRequests request_factory;
+            static ICreateRequests request_factory;
         }
     }
 }
