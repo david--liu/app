@@ -12,10 +12,10 @@ def configure_remote
   `git remote add jp git://github.com/20120514austin/app.git`
 end
 
-def create_first_branch
-  checkout("clean")
+def create_first_branches
+  %w[clean master starting_point].each{|branch| checkout(branch)}
 end
 
 install_utilities
 configure_remote
-create_first_branch
+create_first_branches
