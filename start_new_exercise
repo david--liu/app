@@ -2,7 +2,7 @@
 
 require_relative 'git_utils.rb'
 
-exit_if_on_the_master_branch
+%w[master clean].each{|branch| exit_if_on_the_branch branch}
 
 current_time = Time.now
 new_branch_name = current_time.strftime("%Y%m%d%H%M%S%3N")
@@ -16,7 +16,7 @@ if (branch_name != "")
   checkout(branch_name)
 end
 
-`git checkout master`
+checkout(master)
 
 exit_if_not_on_the_master_branch
 
