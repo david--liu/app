@@ -46,6 +46,28 @@ namespace app.specs
                 static IContainRequestDetails request;
                 static IList<IProcessOneRequest> all_the_possible_processors;
             }
+            public class and_it_does_not_have_the_processor
+            {
+                Establish c = () =>
+                {
+                    all_the_possible_processors = Enumerable.Range(1,100).Select(x => fake.an<IProcessOneRequest>()).ToList();
+                    the_special_case = fake.an<IProcessOneRequest>();
+                    request = fake.an<IContainRequestDetails>();
+                    depends.on<IEnumerable<IProcessOneRequest>>(all_the_possible_processors);
+                    depends.on<CreateMissingRequestProcessor_Behaviour>(() => the_special_case);
+                };
+
+                Because b = () =>
+                    result = sut.get_the_command_that_can_handle(request);
+
+                It should_return_the_special_case = () =>
+                    result.ShouldEqual(the_special_case);
+
+                static IProcessOneRequest result;
+                static IProcessOneRequest the_special_case;
+                static IContainRequestDetails request;
+                static IList<IProcessOneRequest> all_the_possible_processors;
+            }
                 
         }
     }

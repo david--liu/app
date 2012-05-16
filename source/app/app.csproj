@@ -80,6 +80,7 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\core\aspnet\ASPNetHandler.cs" />
+    <Compile Include="web\core\CreateMissingRequestProcessor_Behaviour.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestDetails.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
