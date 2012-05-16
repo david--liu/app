@@ -42,7 +42,7 @@ namespace app
         static void ensure_has_role(string role)
         {
             if (!Thread.CurrentPrincipal.IsInRole(role))
-                throw new SecurityException();
+                throw new SecurityException(string.Format("but you dont have the role - {0}"));
         }
     }
 }
