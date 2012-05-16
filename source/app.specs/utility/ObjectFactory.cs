@@ -20,7 +20,7 @@ namespace app.specs.utility
 
             static HttpResponse create_response()
             {
-                return new HttpResponse(new StringWriter);
+                return new HttpResponse(new StringWriter());
             }
         }
     }
