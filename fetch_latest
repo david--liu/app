@@ -1,13 +1,6 @@
 #!/usr/bin/env ruby
 
-def run_git_command(command,capture_ouptut = false)
-    full_command = "git #{command}"
-    if (capture_ouptut)
-        `#{full_command}`
-    else
-        system(full_command)
-    end
-end
+require_relative 'git_utils.rb'
 
 def get_latest_remote_branch_name(remote_name)
   branch_pattern = /^\d*$/
@@ -20,14 +13,7 @@ def get_all_available_non_origin_remotes
 end
 
 def choose_remote(remotes)
-  remotes.each_with_index do|remote,index|
-    puts "#{index + 1} - #{remote}\n"
-  end
-
-   "Choose remote:"
-  index = gets.chomp.to_i
-
-  index == 0 ? "": remotes[index-1]
+  pick_item_from(remotes,"Choose remote:")
 end
 
 def update_to_latest_branch_on(remote_name)
@@ -41,6 +27,8 @@ def update_to_latest_branch_on(remote_name)
   run_git_command("checkout #{new_branch}")
   run_git_command("pull #{remote_name} #{latest_branch}")
 end
+
+%w[master clean].each{|branch| exit_if_on_branch branch}
 
 remote_name = ARGV.shift
 remote_name = choose_remote(get_all_available_non_origin_remotes) if remote_name == nil

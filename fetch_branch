@@ -2,25 +2,6 @@
 
 require_relative 'git_utils.rb'
 
-def run_git_command(command,capture_ouptut = false)
-    full_command = "git #{command}"
-    if (capture_ouptut)
-        `#{full_command}`
-    else
-        system(full_command)
-    end
-end
-
-def pick_item_from(items,prompt)
-  items.each_with_index do|item,index|
-    puts "#{index + 1} - #{item}\n"
-  end
-
-  p prompt
-  index = gets.chomp.to_i
-
-  return index == 0 ? "": items[index-1]
-end
 
 def get_specific_remote_branch_name_from(remote_name)
   run_git_command("fetch #{remote_name}")
