@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 
 namespace app.web.core.aspnet
 {
@@ -13,7 +14,7 @@ namespace app.web.core.aspnet
 
         public void ProcessRequest(HttpContext context)
         {
-            front_controller.process();
+            throw new NotImplementedException();
         }
 
         public bool IsReusable
