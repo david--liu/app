@@ -12,7 +12,7 @@ namespace app.specs
 {
     public class CalculatorSpecs
     {
-        public abstract class concern : Observes<Calculator>
+        public abstract class concern : Observes<ICalculate,Calculator>
         {
         }
 
@@ -23,6 +23,7 @@ namespace app.specs
                 Establish c = () =>
                 {
                     principal = fake.an<IPrincipal>();
+
                     principal.setup(x => x.IsInRole(Arg<string>.Is.Anything)).Return(false);
 
                     spec.change(() => Thread.CurrentPrincipal).to(principal);
@@ -45,7 +46,9 @@ namespace app.specs
                 Establish c = () =>
                 {
                     connection = depends.on<IDbConnection>();
+                    the_action = depends.on<Action>();
                     command = fake.an<IDbCommand>();
+
 
                     connection.setup(x => x.CreateCommand()).Return(command);
                 };
@@ -75,6 +78,7 @@ namespace app.specs
                 static int result;
                 static IDbConnection connection;
                 static IDbCommand command;
+                static Action the_action;
             }
 
             public class a_negative_to_a_positive

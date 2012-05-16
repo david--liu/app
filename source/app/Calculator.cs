@@ -6,11 +6,17 @@ using System.Threading;
 
 namespace app
 {
-    public class Calculator
+    public interface ICalculate
+    {
+        int add(int first, int second);
+        void turn_off();
+    }
+
+    public class Calculator : ICalculate
     {
         IDbConnection connection;
 
-        public Calculator(IDbConnection connection)
+        public Calculator(IDbConnection connection,int number,Action item2,Action item3)
         {
             this.connection = connection;
         }
@@ -36,10 +42,8 @@ namespace app
 
         public void turn_off()
         {
-            if (Thread.CurrentContext != Thread.CurrentPrincipal)
-            {
-                throw new SecurityException();
-            }
+            if (! Thread.CurrentPrincipal.IsInRole("sdfsdfd")) throw new SecurityException();
         }
+
     }
 }
