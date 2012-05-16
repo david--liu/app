@@ -13,7 +13,7 @@ def configure_remote
 end
 
 def create_first_branch
-  checkout("start_of_week")
+  checkout("clean")
 end
 
 install_utilities

@@ -33,7 +33,7 @@ end
 def update_to_latest_branch_on(remote_name)
   run_git_command("add -A")
   run_git_command('commit -m "Updated"')
-  run_git_command("checkout master")
+  run_git_command("checkout clean")
   latest_branch = get_latest_remote_branch_name(remote_name)
 
   new_branch = "pull_#{remote_name}_#{latest_branch}"
