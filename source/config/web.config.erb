@@ -17,11 +17,13 @@
     <pages autoEventWireup="false">
     </pages>
     <authentication mode="Windows"/>
+    <% unless configatron.has_iis_express %>
     <httpHandlers>
       <add path="*.austin"
         verb="*"
         type="app.web.core.aspnet.ASPNetHandler,app"/>
         </httpHandlers>
+    <% end %>
    </system.web>
   <system.webServer>
   </system.webServer>
