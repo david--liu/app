@@ -18,7 +18,7 @@ namespace app.specs
         {
             Establish c = () =>
             {
-                data_store = depends.on<IDataStore>();
+                contain_data_for_client = depends.on<IContainDataForClient>();
                 
             };
 
@@ -28,10 +28,10 @@ namespace app.specs
 
             It should_store_info_in_a_data_store = () =>
             {
-                data_store.received(x => x.store(model));
+                contain_data_for_client.received(x => x.store(model));
             };
             static object model; 
-            static IDataStore data_store;
+            static IContainDataForClient contain_data_for_client;
         }
 
        

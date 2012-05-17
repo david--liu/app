@@ -2,16 +2,16 @@
 {
     public class WebFormDisplayEngine : IDisplayInformation
     {
-        readonly IDataStore dataStore;
+        readonly IContainDataForClient containDataForClient;
 
         public void display<ReportModel>(ReportModel model)
         {
-            dataStore.store(model);
+            containDataForClient.store(model);
         }
 
-        public WebFormDisplayEngine(IDataStore dataStore)
+        public WebFormDisplayEngine(IContainDataForClient containDataForClient)
         {
-            this.dataStore = dataStore;
+            this.containDataForClient = containDataForClient;
         }
 
         
