@@ -1,4 +1,6 @@
-﻿namespace app.web.core.aspnet
+﻿using System.Web;
+
+namespace app.web.core.aspnet
 {
     public class WebFormDisplayEngine : IDisplayInformation
     {
@@ -9,6 +11,11 @@
         {
             this.view_registry = view_registry;
             this.current_context_resolution = current_context_resolution;
+        }
+
+        public WebFormDisplayEngine():this(new WebFormViewRegistry(),
+                                           () => HttpContext.Current)
+        {
         }
 
         public void display<ReportModel>(ReportModel model)

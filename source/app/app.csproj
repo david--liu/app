@@ -88,9 +88,13 @@
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartment.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartmentRequest.cs" />
     <Compile Include="web\core\aspnet\ASPNetHandler.cs" />
+    <Compile Include="web\core\aspnet\CreatePage_Behaviour.cs" />
     <Compile Include="web\core\aspnet\GetTheCurrentContext_Behaviour.cs" />
+    <Compile Include="web\core\aspnet\IDisplayA.cs" />
+    <Compile Include="web\core\aspnet\IFindPathsToViews.cs" />
     <Compile Include="web\core\aspnet\IFindViews.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
+    <Compile Include="web\core\aspnet\WebFormViewRegistry.cs" />
     <Compile Include="web\core\CreateMissingRequestProcessor_Behaviour.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestDetails.cs" />
@@ -103,10 +107,10 @@
     <Compile Include="web\core\RequestMatch_Behaviour.cs" />
     <Compile Include="web\core\RequestProcessor.cs" />
     <Compile Include="web\core\RequestProcessorRegistry.cs" />
-    <Compile Include="web\core\stubs\StubDisplayEngine.cs" />
     <Compile Include="web\core\stubs\StubMissingProcessorBehaviour.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfProcessors.cs" />
+    <Compile Include="web\core\stubs\StubViewUrlRegistry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

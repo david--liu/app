@@ -1,6 +1,6 @@
 ﻿using app.web.application.catalogbrowsing.stubs;
 using app.web.core;
-using app.web.core.stubs;
+using app.web.core.aspnet;
 
 namespace app.web.application.catalogbrowsing
 {
@@ -16,7 +16,7 @@ namespace app.web.application.catalogbrowsing
             this.display_engine = display_engine;
         }
 
-        public ViewTheDepartmentsInADepartment():this(new StubStoreCatalog(),new StubDisplayEngine())
+        public ViewTheDepartmentsInADepartment() : this(new StubStoreCatalog(), new WebFormDisplayEngine())
         {
         }
 
