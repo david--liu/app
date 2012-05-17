@@ -1,0 +1,6 @@
+#Software: IIS Advanced Logging Module
+#Version: 1.0
+#Start-Date: 2012-05-17 23:39:09.485
+#Fields:  Date-UTC Time-UTC Client-IP UserName SiteName ComputerName Server-IP Method URI-Stem URI-Querystring Status Win32Status BytesSent BytesReceived Time-Taken ServerPort User-Agent Cookie Referer Protocol Version Host Substatus
+2012-05-17 23:39:08.346 ::1 "-" "APP" "-" ::1 GET /blah.austin - 500 -2147024846 5762 299 936 8080 "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0" "-" "-" "-" "localhost:8080" 23
+2012-05-17 23:47:47.844 ::1 "-" "APP" "-" ::1 GET /blah.austin - 500 -2147024846 5762 299 343 8080 "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0" "-" "-" "-" "localhost:8080" 23
