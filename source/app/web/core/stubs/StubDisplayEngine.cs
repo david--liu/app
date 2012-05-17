@@ -9,5 +9,10 @@ namespace app.web.core.stubs
             HttpContext.Current.Items.Add("blah", model);
             HttpContext.Current.Server.Transfer("~/views/DepartmentBrowser.aspx");
         }
+
+        public void display_a_department<ReportModel>(ReportModel model)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
