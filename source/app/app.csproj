@@ -87,6 +87,7 @@
     <Compile Include="web\core\IFindRequestProcessors.cs" />
     <Compile Include="web\core\IProcessOneRequest.cs" />
     <Compile Include="web\core\IProcessWebRequests.cs" />
+    <Compile Include="web\core\RequestProcessor.cs" />
     <Compile Include="web\core\RequestProcessorRegistry.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
