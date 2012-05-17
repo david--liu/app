@@ -22,7 +22,7 @@ namespace app.web.application.catalogbrowsing
 
         public void process(IContainRequestDetails request)
         {
-            display_engine.display(product_repository.get_the_products_in(request.map<DepartmentSelection>()));
+            display_engine.display(product_repository.get_the_products_in(request.map<ViewTheProductsInADepartmentRequest>()));
         }
     }
 }

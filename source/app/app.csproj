@@ -88,6 +88,7 @@
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartment.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartment.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartmentRequest.cs" />
     <Compile Include="web\core\aspnet\ASPNetHandler.cs" />
     <Compile Include="web\core\CreateMissingRequestProcessor_Behaviour.cs" />
     <Compile Include="web\core\FrontController.cs" />

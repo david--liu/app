@@ -22,11 +22,12 @@ namespace app.specs
             {
                 product_repository = depends.on<IFindProducts>();
                 display_engine = depends.on<IDisplayInformation>();
-                the_selected_department = new DepartmentSelection();
+                request_input_model = new ViewTheProductsInADepartmentRequest();
                 request = fake.an<IContainRequestDetails>();
+                products = new List<ProductDisplayItem>() {new ProductDisplayItem()};
                 
-                request.setup(x => x.map<DepartmentSelection>()).Return(the_selected_department);
-                product_repository.setup(x => x.get_the_products_in(the_selected_department)).Return(products);
+                request.setup(x => x.map<ViewTheProductsInADepartmentRequest>()).Return(request_input_model);
+                product_repository.setup(x => x.get_the_products_in(request_input_model)).Return(products);
             };
 
 
@@ -38,7 +39,7 @@ namespace app.specs
                 display_engine.received(x => x.display(products));
 
             static IDisplayInformation display_engine;
-            static DepartmentSelection the_selected_department;
+            static ViewTheProductsInADepartmentRequest request_input_model;
             static IContainRequestDetails request;
             static IEnumerable<ProductDisplayItem> products;
             static IFindProducts product_repository;
