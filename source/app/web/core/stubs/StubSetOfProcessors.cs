@@ -20,7 +20,7 @@ namespace app.web.core.stubs
                                      new ViewAPage<IEnumerable<DepartmentDisplayItem>>(
                                          request =>
                                              new StubStoreCatalog().get_the_departments_in(
-                                                 request.map<DepartmentSelection>()), new WebFormDisplayEngine()));
+                                                 request.map<DepartmentSelection>())));
 
 
 

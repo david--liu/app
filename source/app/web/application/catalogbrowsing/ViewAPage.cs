@@ -1,5 +1,6 @@
 ﻿using System;
 using app.web.core;
+using app.web.core.aspnet;
 
 namespace app.web.application.catalogbrowsing
 {
@@ -10,6 +11,10 @@ namespace app.web.application.catalogbrowsing
         IDisplayInformation display_engine;
 
 
+
+        public ViewAPage(Func<IContainRequestDetails, ReportModel> accessor) : this(accessor , new WebFormDisplayEngine())
+        {
+        }
 
         public ViewAPage(Func<IContainRequestDetails, ReportModel> accessor, IDisplayInformation displayEngine)
         {
