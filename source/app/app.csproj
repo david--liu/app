@@ -93,6 +93,9 @@
     <Compile Include="web\core\aspnet\IDisplayA.cs" />
     <Compile Include="web\core\aspnet\IFindPathsToViews.cs" />
     <Compile Include="web\core\aspnet\IFindViews.cs" />
+    <Compile Include="web\core\aspnet\ReportPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\aspnet\WebFormViewRegistry.cs" />
     <Compile Include="web\core\CreateMissingRequestProcessor_Behaviour.cs" />
