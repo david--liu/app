@@ -83,10 +83,7 @@
     <Compile Include="web\application\catalogbrowsing\IFindInformationAboutTheStore.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductDisplayItem.cs" />
     <Compile Include="web\application\catalogbrowsing\stubs\StubStoreCatalog.cs" />
-    <Compile Include="web\application\catalogbrowsing\ViewAPage.cs" />
-    <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartment.cs" />
-    <Compile Include="web\application\catalogbrowsing\ViewTheMainDepartmentsInTheStore.cs" />
-    <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartment.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewA.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartmentRequest.cs" />
     <Compile Include="web\core\aspnet\ASPNetHandler.cs" />
     <Compile Include="web\core\aspnet\CreatePage_Behaviour.cs" />
@@ -104,6 +101,7 @@
     <Compile Include="web\core\IContainRequestDetails.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
     <Compile Include="web\core\IDisplayInformation.cs" />
+    <Compile Include="web\core\IFetchAn.cs" />
     <Compile Include="web\core\IFindRequestProcessors.cs" />
     <Compile Include="web\core\IProcessOneRequest.cs" />
     <Compile Include="web\core\IProcessWebRequests.cs" />

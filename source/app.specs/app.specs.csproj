@@ -123,10 +123,7 @@
     <Compile Include="RequestProcessorRegistrySpecs.cs" />
     <Compile Include="RequestProcessorSpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
-    <Compile Include="ViewAPageSpecs.cs" />
-    <Compile Include="ViewTheDepartmentsInADepartmentSpecs.cs" />
-    <Compile Include="ViewTheMainDepartmentsInTheStoreSpecs.cs" />
-    <Compile Include="ViewTheProductsInADepartmentSpecs.cs" />
+    <Compile Include="ViewASpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
     <Compile Include="WebFormViewRegistrySpecs.cs" />
   </ItemGroup>

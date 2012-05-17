@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using app.web.application.catalogbrowsing;
 using app.web.application.catalogbrowsing.stubs;
-using app.web.core.aspnet;
 
 namespace app.web.core.stubs
 {
@@ -15,31 +14,30 @@ namespace app.web.core.stubs
 
         public IEnumerator<IProcessOneRequest> GetEnumerator()
         {
-            var storeCatalog = new StubStoreCatalog();
             yield return
                 new RequestProcessor(x => true,
-                                     new ViewAPage<IEnumerable<DepartmentDisplayItem>>(
-                                         request =>
-                                             storeCatalog.get_the_main_departments_in_the_store()));
+                                     new ViewA<IEnumerable<DepartmentDisplayItem>>(new GetTheMainDepartmentsInTheStore()))
+                ; 
             yield return
                 new RequestProcessor(x => true,
-                                     new ViewAPage<IEnumerable<DepartmentDisplayItem>>(
-                                         request =>
-                                             storeCatalog.get_the_departments_in(
-                                                 request.map<DepartmentSelection>())));
+                                     new ViewA<IEnumerable<ProductDisplayItem>>(new GetTheProductsInADepartment()))
+                ; 
+        }
+    }
 
-            yield return
-                new RequestProcessor(x => true,
-                                     new ViewAPage<IEnumerable<ProductDisplayItem>>(
-                                         request =>
-                                             storeCatalog.get_the_products_in(
-                                                 request.map<ViewTheProductsInADepartmentRequest>())));
+    public class GetTheProductsInADepartment : IFetchAn<IEnumerable<ProductDisplayItem>>
+    {
+        public IEnumerable<ProductDisplayItem> run_using(IContainRequestDetails request)
+        {
+            return new StubStoreCatalog().get_the_products_in(request.map<ViewTheProductsInADepartmentRequest>());
+        }
+    }
 
-            yield return new RequestProcessor(x => true, new ViewTheProductsInADepartment());
-
-            yield return new RequestProcessor(x => true, new ViewTheProductsInADepartment());
-            yield return new RequestProcessor(x => true, new ViewTheMainDepartmentsInTheStore());
-            yield return new RequestProcessor(x => true, new ViewTheDepartmentsInADepartment());
+    public class GetTheMainDepartmentsInTheStore : IFetchAn<IEnumerable<DepartmentDisplayItem>>
+    {
+        public IEnumerable<DepartmentDisplayItem> run_using(IContainRequestDetails request)
+        {
+            return new StubStoreCatalog().get_the_main_departments_in_the_store();
         }
     }
 }
