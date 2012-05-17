@@ -2,9 +2,18 @@
 {
     public class WebFormDisplayEngine : IDisplayInformation
     {
+        readonly IDataStore dataStore;
+
         public void display<ReportModel>(ReportModel model)
         {
-            throw new System.NotImplementedException();
+            dataStore.store(model);
         }
+
+        public WebFormDisplayEngine(IDataStore dataStore)
+        {
+            this.dataStore = dataStore;
+        }
+
+        
     }
 }

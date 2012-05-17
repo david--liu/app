@@ -21,7 +21,7 @@ namespace app.specs
         {
             Establish c = () =>
             {
-                repository = depends.on<IFindDepartments>();
+                repository = depends.on<IFindInformationAboutTheStore>();
                 display_engine = depends.on<IDisplayInformation>();
                 request = fake.an<IContainRequestDetails>();
                 main_departments = new List<DepartmentDisplayItem>() {new DepartmentDisplayItem()};
@@ -42,7 +42,7 @@ namespace app.specs
                 
 
             static IContainRequestDetails request;
-            static IFindDepartments repository;
+            static IFindInformationAboutTheStore repository;
             static IEnumerable<DepartmentDisplayItem> main_departments;
             static IDisplayInformation display_engine;
         }

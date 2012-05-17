@@ -23,7 +23,6 @@ namespace app.web.application.catalogbrowsing
 
         public void process(IContainRequestDetails request)
         {
-            blackboard.push()
             display_engine.display(store_catalog.get_the_main_departments_in_the_store());
         }
     }

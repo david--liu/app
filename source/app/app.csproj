@@ -93,6 +93,7 @@
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestDetails.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
+    <Compile Include="web\core\IDataStore.cs" />
     <Compile Include="web\core\IDisplayInformation.cs" />
     <Compile Include="web\core\IFindRequestProcessors.cs" />
     <Compile Include="web\core\IProcessOneRequest.cs" />
