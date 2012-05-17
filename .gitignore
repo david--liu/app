@@ -25,3 +25,7 @@ db_dev.rb
 log4net.config.xml
 web.config
 empty.cs
+applicationhost.config
+start_web_app.bat
+web_staging
+*.DotSettings*

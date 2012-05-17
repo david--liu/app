@@ -22,4 +22,8 @@ class String
   def base_name_without_extension
     File.basename(self,'.*')
   end
+
+  def as_win_path
+    self.gsub(/\//,"\\")
+  end
 end

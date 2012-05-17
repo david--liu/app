@@ -8,6 +8,13 @@ Dir.glob("build/support/**/*.rb").each do|item|
   require File.expand_path(item)
 end
 
+user_profile = "#{File.basename(`whoami`.chomp)}.settings"
+unless File.exist?(user_profile)
+  FileUtils.cp 'settings_template', user_profile
+  p "You may need to change the settings in the file #{user_profile}"
+end
+load user_profile
+
 config_files = FileList.new("source/config/*.erb")
 
 [configatron.artifacts_dir, configatron.specs.dir].each do |item|
@@ -23,6 +30,9 @@ task :init  => :clean do
     configatron.artifacts_dir,
     configatron.specs.dir,
     configatron.specs.report_dir,
+    configatron.web_staging_dir,
+    configatron.web_log_dir,
+    configatron.web_trace_dir
   ].each do |folder| 
     FileUtils.mkdir_p folder if ! File.exists?(folder)
   end
@@ -35,4 +45,8 @@ task :copy_config_files do
         folder.join(file.base_name_without_extension))
       end
   end
+end
+
+task :kill_iis do
+  system("taskkill /IM iisexpress.exe")
 end

@@ -1,0 +1,6 @@
+config = 
+{
+  :has_iis_express => false,
+  :iis_express => '/c/utils/iis_express/iisexpress.exe'
+}
+configatron.configure_from_hash config
