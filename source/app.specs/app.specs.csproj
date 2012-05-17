@@ -123,7 +123,7 @@
     <Compile Include="RequestProcessorRegistrySpecs.cs" />
     <Compile Include="RequestProcessorSpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
-    <Compile Include="ViewAnyDepartmentInTheStoreSpecs.cs" />
+    <Compile Include="ViewTheDepartmentsInADepartmentSpecs.cs" />
     <Compile Include="ViewTheMainDepartmentsInTheStoreSpecs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
