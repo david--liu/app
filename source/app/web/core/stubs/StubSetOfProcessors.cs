@@ -15,23 +15,24 @@ namespace app.web.core.stubs
 
         public IEnumerator<IProcessOneRequest> GetEnumerator()
         {
+            var storeCatalog = new StubStoreCatalog();
             yield return
                 new RequestProcessor(x => true,
                                      new ViewAPage<IEnumerable<DepartmentDisplayItem>>(
                                          request =>
-                                             new StubStoreCatalog().get_the_main_departments_in_the_store()));
+                                             storeCatalog.get_the_main_departments_in_the_store()));
             yield return
                 new RequestProcessor(x => true,
                                      new ViewAPage<IEnumerable<DepartmentDisplayItem>>(
                                          request =>
-                                             new StubStoreCatalog().get_the_departments_in(
+                                             storeCatalog.get_the_departments_in(
                                                  request.map<DepartmentSelection>())));
 
             yield return
                 new RequestProcessor(x => true,
                                      new ViewAPage<IEnumerable<ProductDisplayItem>>(
                                          request =>
-                                             new StubStoreCatalog().get_the_products_in(
+                                             storeCatalog.get_the_products_in(
                                                  request.map<ViewTheProductsInADepartmentRequest>())));
 
             yield return new RequestProcessor(x => true, new ViewTheProductsInADepartment());
