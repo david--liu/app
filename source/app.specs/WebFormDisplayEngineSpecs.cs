@@ -15,7 +15,21 @@ namespace app.specs
 
         public class when_displaying_an_item : concern
         {
-            It first_observation = () => 
+            Establish c = () =>
+            {
+                view = depends.on<IFindViews>();
+            };
+
+            It should_load_the_appropriate_view = () =>
+            {
+                view.received()
+            };
+
+            static IFindViews view;
         }
+    }
+
+    public interface IFindViews
+    {
     }
 }
