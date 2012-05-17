@@ -26,7 +26,7 @@ namespace app.specs
                 sut.display(model);
 
 
-            It should_store_info_in_a_data_store = () =>
+            It should_store_info_in_a_data_store_that_client_has_access_to = () =>
             {
                 contain_data_for_client.received(x => x.store(model));
             };
