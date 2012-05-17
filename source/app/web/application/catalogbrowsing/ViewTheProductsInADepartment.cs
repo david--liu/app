@@ -6,17 +6,17 @@ namespace app.web.application.catalogbrowsing
 {
     public class ViewTheProductsInADepartment : ISupportAFeature
     {
-        IFindProducts product_repository;
+        IFindInformationAboutTheStore product_repository;
         IDisplayInformation display_engine;
 
-        public ViewTheProductsInADepartment(IFindProducts product_repository,
+        public ViewTheProductsInADepartment(IFindInformationAboutTheStore product_repository,
                                                IDisplayInformation display_engine)
         {
             this.product_repository = product_repository;
             this.display_engine = display_engine;
         }
 
-        public ViewTheProductsInADepartment() : this(new StubProductRepository(), new StubDisplayEngine())
+        public ViewTheProductsInADepartment() : this(new StubStoreCatalog(), new StubDisplayEngine())
         {
         }
 

@@ -20,7 +20,7 @@ namespace app.specs
         {
             Establish c = () =>
             {
-                product_repository = depends.on<IFindProducts>();
+                product_repository = depends.on<IFindInformationAboutTheStore>();
                 display_engine = depends.on<IDisplayInformation>();
                 request_input_model = new ViewTheProductsInADepartmentRequest();
                 request = fake.an<IContainRequestDetails>();
@@ -42,7 +42,7 @@ namespace app.specs
             static ViewTheProductsInADepartmentRequest request_input_model;
             static IContainRequestDetails request;
             static IEnumerable<ProductDisplayItem> products;
-            static IFindProducts product_repository;
+            static IFindInformationAboutTheStore product_repository;
         }
     }
 }

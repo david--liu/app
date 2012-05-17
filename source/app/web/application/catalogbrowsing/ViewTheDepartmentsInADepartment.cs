@@ -6,17 +6,17 @@ namespace app.web.application.catalogbrowsing
 {
     public class ViewTheDepartmentsInADepartment : ISupportAFeature
     {
-        IFindDepartments department_repository;
+        IFindInformationAboutTheStore department_repository;
         IDisplayInformation display_engine;
 
-        public ViewTheDepartmentsInADepartment(IFindDepartments department_repository,
+        public ViewTheDepartmentsInADepartment(IFindInformationAboutTheStore department_repository,
                                                IDisplayInformation display_engine)
         {
             this.department_repository = department_repository;
             this.display_engine = display_engine;
         }
 
-        public ViewTheDepartmentsInADepartment():this(new StubDepartmentRepository(),new StubDisplayEngine())
+        public ViewTheDepartmentsInADepartment():this(new StubStoreCatalog(),new StubDisplayEngine())
         {
         }
 
