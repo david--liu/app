@@ -83,6 +83,7 @@
     <Compile Include="web\application\catalogbrowsing\IFindInformationAboutTheStore.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductDisplayItem.cs" />
     <Compile Include="web\application\catalogbrowsing\stubs\StubStoreCatalog.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewAPage.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartment.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartment.cs" />
