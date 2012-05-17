@@ -79,16 +79,26 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="web\application\catalogbrowsing\IFindDepartments.cs" />
+    <Compile Include="web\application\catalogbrowsing\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewTheMainDepartmentsInTheStore.cs" />
     <Compile Include="web\core\aspnet\ASPNetHandler.cs" />
     <Compile Include="web\core\CreateMissingRequestProcessor_Behaviour.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestDetails.cs" />
     <Compile Include="web\core\ICreateRequests.cs" />
+    <Compile Include="web\core\IDisplayInformation.cs" />
     <Compile Include="web\core\IFindRequestProcessors.cs" />
     <Compile Include="web\core\IProcessOneRequest.cs" />
     <Compile Include="web\core\IProcessWebRequests.cs" />
+    <Compile Include="web\core\ISupportAFeature.cs" />
+    <Compile Include="web\core\RequestMatch_Behaviour.cs" />
     <Compile Include="web\core\RequestProcessor.cs" />
     <Compile Include="web\core\RequestProcessorRegistry.cs" />
+    <Compile Include="web\core\stubs\StubDisplayEngine.cs" />
+    <Compile Include="web\core\stubs\StubMissingProcessorBehaviour.cs" />
+    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
+    <Compile Include="web\core\stubs\StubSetOfProcessors.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

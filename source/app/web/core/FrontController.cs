@@ -4,6 +4,10 @@
     {
         IFindRequestProcessors processor_registry;
 
+        public FrontController():this(new RequestProcessorRegistry())
+        {
+        }
+
         public FrontController(IFindRequestProcessors processor_registry)
         {
             this.processor_registry = processor_registry;
