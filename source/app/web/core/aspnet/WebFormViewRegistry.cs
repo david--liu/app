@@ -15,11 +15,6 @@ namespace app.web.core.aspnet
             this.url_registry = url_registry;
         }
 
-        public WebFormViewRegistry():this(BuildManager.CreateInstanceFromVirtualPath,
-            new StubViewUrlRegistry())
-        {
-        }
-
         public IHttpHandler find_view_that_can_display<ReportModel>(ReportModel model)
         {
             var page =

@@ -1,5 +1,4 @@
 ﻿using System.Web;
-using app.web.core.stubs;
 
 namespace app.web.core.aspnet
 {
@@ -14,7 +13,7 @@ namespace app.web.core.aspnet
             this.request_factory = request_factory;
         }
 
-        public ASPNetHandler():this(new FrontController(),new StubRequestFactory())
+        public ASPNetHandler()
         {
         }
 

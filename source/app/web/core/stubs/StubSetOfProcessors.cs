@@ -14,14 +14,15 @@ namespace app.web.core.stubs
 
         public IEnumerator<IProcessOneRequest> GetEnumerator()
         {
-            yield return
-                new RequestProcessor(x => true,
-                                     new ViewA<IEnumerable<DepartmentDisplayItem>>(new GetTheMainDepartmentsInTheStore()))
-                ; 
-            yield return
-                new RequestProcessor(x => true,
-                                     new ViewA<IEnumerable<ProductDisplayItem>>(new GetTheProductsInADepartment()))
-                ; 
+//            yield return
+//                new RequestProcessor(x => true,
+//                                     new ViewA<IEnumerable<DepartmentDisplayItem>>(new GetTheMainDepartmentsInTheStore()))
+//                ; 
+//            yield return
+//                new RequestProcessor(x => true,
+//                                     new ViewA<IEnumerable<ProductDisplayItem>>(new GetTheProductsInADepartment()))
+//                ; 
+            yield break;
         }
     }
 

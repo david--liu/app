@@ -13,10 +13,6 @@ namespace app.web.core.aspnet
             this.current_context_resolution = current_context_resolution;
         }
 
-        public WebFormDisplayEngine():this(new WebFormViewRegistry(),
-                                           () => HttpContext.Current)
-        {
-        }
 
         public void display<ReportModel>(ReportModel model)
         {

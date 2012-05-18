@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using app.web.core.stubs;
 
 namespace app.web.core
 {
@@ -14,10 +13,6 @@ namespace app.web.core
         {
             this.all_the_possible_processors = all_the_possible_processors;
             this.special_case_factory = special_case_factory;
-        }
-
-        public RequestProcessorRegistry():this(new StubSetOfProcessors(),StubMissingProcessorBehaviour.create)
-        {
         }
 
         public IProcessOneRequest get_the_command_that_can_handle(IContainRequestDetails the_request)
