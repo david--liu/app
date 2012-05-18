@@ -16,11 +16,7 @@ namespace app.startup
         static IDictionary<Type, ICreateASingleDependency> factories;
 
 
-        private static void Add<RegisteredType>(
-            IDictionary<Type, ICreateASingleDependency> factories,            
-            Func<object> object_fetcher
- 
-            )
+        private static void Add<RegisteredType>(IDictionary<Type, ICreateASingleDependency> factories, Func<object> object_fetcher)
         {
             var type = typeof(RegisteredType);
             factories.Add(type, new DependencyFactory(new IsATypeOf(type).matches, new SimpleDependencyFactory(object_fetcher)));
@@ -30,7 +26,6 @@ namespace app.startup
         {
             factories = new Dictionary<Type, ICreateASingleDependency>();
 
-
             GetTheCurrentContext_Behaviour current_context = () => HttpContext.Current;
             CreatePage_Behaviour page_factory = BuildManager.CreateInstanceFromVirtualPath;
 
@@ -38,12 +33,15 @@ namespace app.startup
             Add<ICreateRequests>(factories, () => new StubRequestFactory());
             Add<CreateMissingRequestProcessor_Behaviour>(factories, () => StartupItems.ExceptionFactories.missing_request_processor);
             Add<IProcessWebRequests>(factories, () => new FrontController(Container.fetch.an<IFindRequestProcessors>()));
-            Add<IFindRequestProcessors>(factories, () => new RequestProcessorRegistry(Container.fetch.an<IEnumerable<IProcessOneRequest>>(),
+            Add<IFindRequestProcessors>(factories, () => 
+                    new RequestProcessorRegistry(Container.fetch.an<IEnumerable<IProcessOneRequest>>(),
                     Container.fetch.an<CreateMissingRequestProcessor_Behaviour>()));
-            Add<IDisplayInformation>(factories, () => new WebFormDisplayEngine(Container.fetch.an<IFindViews>(),
+            Add<IDisplayInformation>(factories, () => 
+                    new WebFormDisplayEngine(Container.fetch.an<IFindViews>(),
                     Container.fetch.an<GetTheCurrentContext_Behaviour>()));
             Add<CreatePage_Behaviour>(factories, () => page_factory);
-            Add<IFindViews>(factories, () => new WebFormViewRegistry(Container.fetch.an<CreatePage_Behaviour>(),
+            Add<IFindViews>(factories, () => 
+                    new WebFormViewRegistry(Container.fetch.an<CreatePage_Behaviour>(),
                     Container.fetch.an<IFindPathsToViews>()));
             Add<IFindPathsToViews>(factories, () => new StubViewUrlRegistry());
             Add<IFetchAn<IEnumerable<DepartmentDisplayItem>>>(factories, () => new GetTheMainDepartmentsInTheStore());       
