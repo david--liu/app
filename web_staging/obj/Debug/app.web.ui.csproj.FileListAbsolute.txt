@@ -1,5 +1,0 @@
-c:\users\jp\repositories\github\dwp\app\artifacts\app.web.ui.dll
-c:\users\jp\repositories\github\dwp\app\artifacts\app.web.ui.pdb
-c:\users\jp\repositories\github\dwp\app\source\app.web.ui\obj\Debug\ResolveAssemblyReference.cache
-c:\users\jp\repositories\github\dwp\app\source\app.web.ui\obj\Debug\app.web.ui.dll
-c:\users\jp\repositories\github\dwp\app\source\app.web.ui\obj\Debug\app.web.ui.pdb

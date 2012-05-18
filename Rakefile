@@ -48,5 +48,7 @@ task :copy_config_files do
 end
 
 task :kill_iis do
-  system("taskkill /IM iisexpress.exe")
+  %w/iisexpress cmd firefox/.each do|process|
+    system("taskkill /IM #{process}.exe")
+  end
 end

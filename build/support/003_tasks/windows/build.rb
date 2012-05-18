@@ -9,7 +9,7 @@ namespace :build do
     csc.target = :library
   end
 
-  aspnetcompiler :web do |c|
+  aspnetcompiler :web => [:init, :copy_config_files] do |c|
     c.physical_path = "source/app.web.ui"
     c.target_path = configatron.web_staging_dir
     c.updateable = true
@@ -18,7 +18,8 @@ namespace :build do
 
   task :rebuild => ["clean","compile"]
 
-  task :run do
+  task :run => [:kill_iis,'build:web'] do
+    system("start start_web_app.bat")
     system("start #{configatron.start_url}")
   end
 end
