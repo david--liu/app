@@ -84,6 +84,7 @@
     <Compile Include="infrastructure\containers\simple\ICreateASingleDependency.cs" />
     <Compile Include="infrastructure\containers\IFetchDependencies.cs" />
     <Compile Include="infrastructure\containers\simple\IFindAFactoryForADependency.cs" />
+    <Compile Include="infrastructure\containers\simple\ItemCreationExceptionFactory_Behaviour.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\catalogbrowsing\CatalogBrowsingController.cs" />
     <Compile Include="web\application\catalogbrowsing\DepartmentSelection.cs" />
