@@ -50,19 +50,19 @@ namespace app.specs
                 Establish c = () =>
                 {
                     factories = depends.on<IFindAFactoryForADependency>();
-                    the_inner_exception = new Exception();
+                    the_original_exception = new Exception();
                     the_wrapped_exception = new Exception();
                     depends.on<ItemCreationExceptionFactory_Behaviour>((type, exception) =>
                     {
                         type.ShouldEqual(typeof(IDbConnection));
-                        exception.ShouldEqual(the_inner_exception);
+                        exception.ShouldEqual(the_original_exception);
                         return the_wrapped_exception;
                     });
                     the_factory = fake.an<ICreateASingleDependency>();
 
                     factories.setup(x => x.get_factory_that_can_create(typeof(IDbConnection)))
                         .Return(the_factory);
-                    the_factory.setup(x => x.create()).Throw(the_inner_exception);
+                    the_factory.setup(x => x.create()).Throw(the_original_exception);
                 };
 
                 Because b = () =>
@@ -73,7 +73,7 @@ namespace app.specs
 
                 static IFindAFactoryForADependency factories;
                 static ICreateASingleDependency the_factory;
-                static Exception the_inner_exception;
+                static Exception the_original_exception;
                 static Exception the_wrapped_exception;
             }
         }

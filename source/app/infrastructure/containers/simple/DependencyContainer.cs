@@ -2,15 +2,15 @@
 {
     public class DependencyContainer : IFetchDependencies
     {
-        IFindAFactoryForADependency factory_finder;
+        IFindAFactoryForADependency factories;
 
-        public DependencyContainer(IFindAFactoryForADependency factoryFinder){
-            factory_finder = factoryFinder;
+        public DependencyContainer(IFindAFactoryForADependency factories){
+            this.factories = factories;
         }
 
         public Collaborator an<Collaborator>()
         {
-            return (Collaborator)factory_finder.get_factory_that_can_create(typeof(Collaborator)).create();
+            return (Collaborator)factories.get_factory_that_can_create(typeof(Collaborator)).create();
         }
     }
 }
