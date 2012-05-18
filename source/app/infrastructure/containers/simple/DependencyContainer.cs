@@ -28,5 +28,10 @@ namespace app.infrastructure.containers.simple
 
             return dependency;
         }
+
+        public object an(Type dependency_type)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
