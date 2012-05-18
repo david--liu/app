@@ -122,6 +122,7 @@
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="RequestProcessorRegistrySpecs.cs" />
     <Compile Include="RequestProcessorSpecs.cs" />
+    <Compile Include="spikes\ExpressionTreeSpikes.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
