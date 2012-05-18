@@ -5,9 +5,10 @@ namespace app.infrastructure.containers.simple
     public class DependencyContainer : IFetchDependencies
     {
         IFindAFactoryForADependency factories;
-        readonly ItemCreationExceptionFactory_Behaviour exception_handing_behavior;
+        ItemCreationExceptionFactory_Behaviour exception_handing_behavior;
 
-        public DependencyContainer(IFindAFactoryForADependency factories, ItemCreationExceptionFactory_Behaviour exception_handing_behavior)
+        public DependencyContainer(IFindAFactoryForADependency factories,
+                                   ItemCreationExceptionFactory_Behaviour exception_handing_behavior)
         {
             this.factories = factories;
             this.exception_handing_behavior = exception_handing_behavior;
@@ -15,23 +16,19 @@ namespace app.infrastructure.containers.simple
 
         public Collaborator an<Collaborator>()
         {
-            return (Collaborator)an(typeof(Collaborator));
+            return (Collaborator) an(typeof(Collaborator));
         }
 
         public object an(Type dependency_type)
         {
-            object dependency;
-
             try
             {
-                dependency = factories.get_factory_that_can_create(dependency_type).create();
+                return factories.get_factory_that_can_create(dependency_type).create();
             }
             catch (Exception ex)
             {
                 throw exception_handing_behavior(dependency_type, ex);
             }
-
-            return dependency;
         }
     }
 }
