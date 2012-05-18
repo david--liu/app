@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using app.infrastructure.containers;
 using app.web.application.catalogbrowsing;
 using app.web.application.catalogbrowsing.stubs;
 
@@ -14,15 +15,10 @@ namespace app.web.core.stubs
 
         public IEnumerator<IProcessOneRequest> GetEnumerator()
         {
-//            yield return
-//                new RequestProcessor(x => true,
-//                                     new ViewA<IEnumerable<DepartmentDisplayItem>>(new GetTheMainDepartmentsInTheStore()))
-//                ; 
-//            yield return
-//                new RequestProcessor(x => true,
-//                                     new ViewA<IEnumerable<ProductDisplayItem>>(new GetTheProductsInADepartment()))
-//                ; 
-            yield break;
+            yield return
+                new RequestProcessor(x => true,
+                                     new ViewA<IEnumerable<DepartmentDisplayItem>>(Container.fetch.an<IFetchAn<IEnumerable<DepartmentDisplayItem>>>(), 
+                                         Container.fetch.an<IDisplayInformation>())) ; 
         }
     }
 

@@ -1,7 +1,9 @@
-﻿namespace app.infrastructure.containers.simple
+﻿using System;
+
+namespace app.infrastructure.containers.simple
 {
-    public interface ICreateASingleDependency
+    public interface ICreateASingleDependency:ICreateADependency
     {
-        object create();
+        bool can_create(Type type);
     }
 }

@@ -119,12 +119,17 @@
     <Compile Include="ASPNetHandlerSpecs.cs" />
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="DepencyFactoryRegistrySpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
+    <Compile Include="DependencyFactorySpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
+    <Compile Include="IsATypeOfSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="RequestProcessorRegistrySpecs.cs" />
     <Compile Include="RequestProcessorSpecs.cs" />
+    <Compile Include="SimpleDependencyFactorySpecs.cs" />
     <Compile Include="spikes\ExpressionTreeSpikes.cs" />
+    <Compile Include="StartupSpecs.cs" />
     <Compile Include="utility\ObjectFactory.cs" />
     <Compile Include="ViewASpecs.cs" />
     <Compile Include="WebFormDisplayEngineSpecs.cs" />
