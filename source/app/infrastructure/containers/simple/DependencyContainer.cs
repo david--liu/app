@@ -15,23 +15,23 @@ namespace app.infrastructure.containers.simple
 
         public Collaborator an<Collaborator>()
         {
-            Collaborator dependency;
-
-            try
-            {
-                dependency = (Collaborator) factories.get_factory_that_can_create(typeof(Collaborator)).create();
-            }
-            catch(Exception ex)
-            {
-                throw exception_handing_behavior(typeof(Collaborator),ex);
-            }
-
-            return dependency;
+            return (Collaborator)an(typeof(Collaborator));
         }
 
         public object an(Type dependency_type)
         {
-            throw new NotImplementedException();
+            object dependency;
+
+            try
+            {
+                dependency = factories.get_factory_that_can_create(dependency_type).create();
+            }
+            catch (Exception ex)
+            {
+                throw exception_handing_behavior(dependency_type, ex);
+            }
+
+            return dependency;
         }
     }
 }
