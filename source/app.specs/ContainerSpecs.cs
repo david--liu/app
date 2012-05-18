@@ -1,7 +1,6 @@
 ﻿using Machine.Specifications;
 using app.infrastructure.containers;
 using developwithpassion.specifications.rhinomocks;
-using developwithpassion.specifications.extensions;
 
 namespace app.specs
 {
@@ -10,7 +9,6 @@ namespace app.specs
     {
         public abstract class concern : Observes
         {
-
         }
 
         public class when_providing_access_to_the_container_facade : concern
@@ -22,6 +20,7 @@ namespace app.specs
 
                 spec.change(() => Container.facade_resolution).to(facade_resolution);
             };
+
             Because b = () =>
                 result = Container.fetch;
 

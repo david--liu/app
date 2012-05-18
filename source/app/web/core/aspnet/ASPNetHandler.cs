@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.infrastructure.containers;
 
 namespace app.web.core.aspnet
 {
@@ -13,7 +14,8 @@ namespace app.web.core.aspnet
             this.request_factory = request_factory;
         }
 
-        public ASPNetHandler()
+        public ASPNetHandler():this(Container.fetch.an<IProcessWebRequests>(),
+            Container.fetch.an<ICreateRequests>())
         {
         }
 

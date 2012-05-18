@@ -2,6 +2,6 @@
 {
     public interface IFetchDependencies
     {
-         
+        Collaborator an<Collaborator>();
     }
 }

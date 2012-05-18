@@ -119,6 +119,7 @@
     <Compile Include="ASPNetHandlerSpecs.cs" />
     <Compile Include="CalculatorSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
+    <Compile Include="DependencyContainerSpecs.cs" />
     <Compile Include="FrontControllerSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="RequestProcessorRegistrySpecs.cs" />
