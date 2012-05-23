@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="ASPNetHandlerSpecs.cs" />
     <Compile Include="CalculatorSpecs.cs" />
+    <Compile Include="code_kata\IntegerStackSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DepencyFactoryRegistrySpecs.cs" />
     <Compile Include="DependencyContainerSpecs.cs" />
