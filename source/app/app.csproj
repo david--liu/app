@@ -80,6 +80,8 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="code_kata\integer_stack\IntegerStack.cs" />
     <Compile Include="code_kata\integer_stack\IStack.cs" />
+    <Compile Include="code_kata\MultiMap\IMultiMap.cs" />
+    <Compile Include="code_kata\MultiMap\MultiMap.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerFacadeResolution_Behaviour.cs" />
     <Compile Include="infrastructure\containers\simple\DepencyFactoryRegistry.cs" />

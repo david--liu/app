@@ -7,6 +7,7 @@ namespace code_kata.integer_stack
     {
         List<int> stacks;
 
+        
         public IntegerStack() : this(new List<int>())
         {
             
