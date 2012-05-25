@@ -78,6 +78,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="code_kata\ExpressionTree\ExpressionConverter.cs" />
+    <Compile Include="code_kata\ExpressionTree\IExpressionConverter.cs" />
     <Compile Include="code_kata\integer_stack\IntegerStack.cs" />
     <Compile Include="code_kata\integer_stack\IStack.cs" />
     <Compile Include="code_kata\MultiMap\IMultiMap.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="web\core\stubs\StubSetOfProcessors.cs" />
     <Compile Include="web\core\stubs\StubViewUrlRegistry.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
