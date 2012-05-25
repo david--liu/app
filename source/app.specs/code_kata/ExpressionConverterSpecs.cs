@@ -74,5 +74,54 @@ namespace code_kata.Specs
                 
         }
 
+        public class when_construct_binary_tree_for_simple_addition :concern
+        {
+            Because b = () =>
+                result = sut.ConstructBinaryTree<int>(" 1 + 1");
+
+            It should_construct_addition_tree = () => 
+                result.ShouldBeOfType<AddBinaryNode>();
+            static BinaryNode result;
+                
+        }
+
+
+        public class when_construct_binary_tree_for_simple_multification : concern
+        {
+            Because b = () =>
+                result = sut.ConstructBinaryTree<int>(" 1 * 1");
+
+            It should_construct_multification_tree = () =>
+                result.ShouldBeOfType<MultiBinaryNode>();
+            static BinaryNode result;
+
+        }
+
+
+        public class when_construct_binary_tree_for_addition_and_multification : concern
+        {
+            Because b = () =>
+                result = sut.ConstructBinaryTree<int>(" (1+1) * 1");
+
+            It should_construct_multification_tree = () =>
+                result.ShouldBeOfType<MultiBinaryNode>();
+            static BinaryNode result;
+
+        }
+
+        public class when_eval_binary_tree_for_addition_and_multification : concern
+        {
+            Because b = () =>
+            {
+                node = sut.ConstructBinaryTree<int>(" (1+1) * 5");
+                result = node.Eval();
+            };
+
+            It should_return_correct_result = () =>
+                result.ShouldEqual(10);
+            static int result;
+            static BinaryNode node;
+        }
+
     }
 }

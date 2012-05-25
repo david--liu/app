@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="code_kata\ExpressionTree\BinaryNode.cs" />
     <Compile Include="code_kata\ExpressionTree\ExpressionConverter.cs" />
     <Compile Include="code_kata\ExpressionTree\IExpressionConverter.cs" />
     <Compile Include="code_kata\integer_stack\IntegerStack.cs" />
