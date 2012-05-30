@@ -87,6 +87,15 @@
     <Compile Include="code_kata\integer_stack\IStack.cs" />
     <Compile Include="code_kata\MultiMap\IMultiMap.cs" />
     <Compile Include="code_kata\MultiMap\MultiMap.cs" />
+    <Compile Include="code_kata\NaturalSort\Digit.cs" />
+    <Compile Include="code_kata\NaturalSort\ILetterAndDigitParser.cs" />
+    <Compile Include="code_kata\NaturalSort\INaturalSort.cs" />
+    <Compile Include="code_kata\NaturalSort\Letter.cs" />
+    <Compile Include="code_kata\NaturalSort\LetterAndDigit.cs" />
+    <Compile Include="code_kata\NaturalSort\LetterAndDigitParser.cs" />
+    <Compile Include="code_kata\NaturalSort\LetterDigitContainer.cs" />
+    <Compile Include="code_kata\NaturalSort\NaturalSort.cs" />
+    <Compile Include="code_kata\NaturalSort\NullLetterOrDigit.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerFacadeResolution_Behaviour.cs" />
     <Compile Include="infrastructure\containers\simple\DepencyFactoryRegistry.cs" />

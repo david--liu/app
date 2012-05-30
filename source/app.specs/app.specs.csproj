@@ -121,6 +121,9 @@
     <Compile Include="code_kata\ExpressionConverterSpecs.cs" />
     <Compile Include="code_kata\IntegerStackSpecs.cs" />
     <Compile Include="code_kata\MultiMapSpecs.cs" />
+    <Compile Include="code_kata\NaturalSort\LetterAndDigitParserSpecs.cs" />
+    <Compile Include="code_kata\NaturalSort\LetterDigitContainerSpecs.cs" />
+    <Compile Include="code_kata\NaturalSort\NaturalSortSpecs.cs" />
     <Compile Include="code_kata\SpellCheck\CheckSpellerSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DepencyFactoryRegistrySpecs.cs" />
