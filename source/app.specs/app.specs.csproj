@@ -124,6 +124,8 @@
     <Compile Include="code_kata\NaturalSort\LetterAndDigitParserSpecs.cs" />
     <Compile Include="code_kata\NaturalSort\LetterDigitContainerSpecs.cs" />
     <Compile Include="code_kata\NaturalSort\NaturalSortSpecs.cs" />
+    <Compile Include="code_kata\RecentList\File.cs" />
+    <Compile Include="code_kata\RecentList\RecentListSpecs.cs" />
     <Compile Include="code_kata\SpellCheck\CheckSpellerSpecs.cs" />
     <Compile Include="ContainerSpecs.cs" />
     <Compile Include="DepencyFactoryRegistrySpecs.cs" />

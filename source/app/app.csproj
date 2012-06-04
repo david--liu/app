@@ -96,6 +96,8 @@
     <Compile Include="code_kata\NaturalSort\LetterDigitContainer.cs" />
     <Compile Include="code_kata\NaturalSort\NaturalSort.cs" />
     <Compile Include="code_kata\NaturalSort\NullLetterOrDigit.cs" />
+    <Compile Include="code_kata\RecentList\IRecentList.cs" />
+    <Compile Include="code_kata\RecentList\RecentList.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerFacadeResolution_Behaviour.cs" />
     <Compile Include="infrastructure\containers\simple\DepencyFactoryRegistry.cs" />
