@@ -8,7 +8,7 @@ Dir.glob("build/support/**/*.rb").each do|item|
   require File.expand_path(item)
 end
 
-user_profile = "#{File.basename(`whoami`.chomp)}.settings"
+user_profile = "david.settings"
 unless File.exist?(user_profile)
   FileUtils.cp 'settings_template', user_profile
   p "You may need to change the settings in the file #{user_profile}"
